@@ -1,7 +1,7 @@
 {
   "name": "praystimes",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "A simple CLI tool that provides prayer times for specified location .",
   "scripts": {
     "start" : "node main.js"
   },
