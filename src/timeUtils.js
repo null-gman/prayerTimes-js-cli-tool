@@ -64,7 +64,7 @@ function formatTime_12Based(time = "") {
     }
     
     let hoursSec = time.split(":")[0];
-    const minutesSec = time.split(":")[1];
+    let minutesSec = time.split(":")[1];
     
     if (+hoursSec > 12) {
         hoursSec = +hoursSec - 12;
@@ -74,6 +74,10 @@ function formatTime_12Based(time = "") {
         hoursSec = "12";   
     }
     
+
+    if (+minutesSec < 10) {
+        minutesSec = "0" + minutesSec;
+    }
     //just to be more clear :) , i know about string concatenating
     return String(hoursSec) + ":" + minutesSec;
 }
