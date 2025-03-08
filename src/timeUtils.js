@@ -79,6 +79,22 @@ function formatTime_12Based(time = "") {
     return formatDD_MM_TT(hoursSec) + ":" + formatDD_MM_TT(minutesSec);
 }
 
+function formatTime_24based(time = "") {
+    
+    time = String(time);
+    if (!time) {
+        throw new Error("can't be undefined");
+    }
+    
+    let hoursSec = time.split(":")[0];
+    let minutesSec = time.split(":")[1];
+    
+    
+    hoursSec = String(+hoursSec + 12)
+
+    return formatDD_MM_TT(hoursSec) + ":" + formatDD_MM_TT(minutesSec);
+}
+
 
 
 
@@ -121,4 +137,10 @@ function GetTodayDate() {
 }
 
 
+
+
+function nextPray(prayTimesObj,crunntTime) {
+    
+    
+}
 export default {GetTodayDate,formatTime_12Based,GetTodayDate,howManyMinutesBetween};
