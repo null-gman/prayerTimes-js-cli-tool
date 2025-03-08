@@ -45,3 +45,12 @@ A simple CLI tool that provides  prayer times for  specified location .
 #### Notes:  
 - The file extension is not required when running the script on both .  
 - To execute it from any directory in the terminal, add the file to a directory included in the system's `PATH` variable.
+
+## DEMO
+1. open terminal
+2. run
+```
+pray
+```
+> be sure to add the file into `PATH` variable to execute it from any directory .
+3.![image](https://github.com/user-attachments/assets/63f264f2-adfe-4ffc-a4e8-a59aaea17b28)
