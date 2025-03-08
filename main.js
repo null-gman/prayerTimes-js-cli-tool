@@ -13,15 +13,20 @@ const Location = "Alexandria";
 
 //i love make main functhion like in c programing
 async function main() {
-    const TodayDate = TimeUtils.GetTodayDate();
-    // const TimeNow = (new Date).toLocaleTimeString(); /*TODO*/
+    const DateNow = new Date();
+    const TodayDate = TimeUtils.GetTodayDate() ;
+    let TimeNow = DateNow.getHours() + ":" + DateNow.getMinutes()  ; /*TODO*/ 
+    TimeNow = TimeUtils.formatTime_12Based(TimeNow);
     const Res = await GetReqRestApi.getJson(TodayDate,Location);
     const Times = Res.data.timings;
 
+   
+    
 
     
     
-    
+     
+    MyPrint.info("TimeNow ",TimeNow);
     MyPrint.info("Location ",Location);
     MyPrint.info("Hijri Date",Res.data.date.hijri.date);
     MyPrint.info("Hijri Month",Res.data.date.hijri.month.en);
