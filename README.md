@@ -21,4 +21,27 @@ A simple CLI tool that provides  prayer times for  specified location .
 3. Change the string to your desired location.
 > may the location you insert doesn't work, be sure to test it.
 
----
+### Using the Script as a CLI Tool from the Terminal  
+
+#### For Linux:  
+1. Create a file named **pray.sh**.  
+2. Insert the following line inside it:  
+   ```bash
+   node <path-to-the-script>/main.js
+   ```  
+3. Save the file and make it executable by running:  
+   ```bash
+   chmod +x pray.sh
+   ```  
+
+#### For Windows:  
+1. Create a file named **pray.bat**.  
+2. Insert the following line inside it:  
+   ```batch(cmd/powershell)
+   node <path-to-the-script>\main.js
+   ```  
+3. Save the file.  
+
+#### Notes:  
+- The file extension is not required when running the script on both .  
+- To execute it from any directory in the terminal, add the file to a directory included in the system's `PATH` variable.
