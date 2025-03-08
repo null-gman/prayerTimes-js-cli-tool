@@ -21,6 +21,15 @@ const BgGray = "\x1b[100m";
 const MyPrint = new Object();
 
 
+MyPrint.timeBetweenPrayes = (prayesTimesObj , prayKey1,prayKey2) => {
+    const prayTime1 = prayesTimesObj[prayKey1];
+    const prayTime2 = prayesTimesObj[prayKey2];
+    const timeBetween = timeUtils.howManyMinutesBetween(prayTime1,prayTime2);
+
+    console.log(`${prayKey1} ------${timeBetween}----> ${prayKey2}`);
+    
+}
+
 MyPrint.prayTime = ( prayName,time ) => {
     //time here mean 12 base 12:88 AM or PM
     time = String(time);

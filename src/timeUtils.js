@@ -83,7 +83,7 @@ function formatTime_12Based(time = "") {
 
 
 function howManyMinutesBetween(time1 , time2) {
-    //time mean : hh:mm 24 hour base
+    //time mean : hh:mm 24 hour base : 22:32
 
     /* 
       !!
@@ -92,21 +92,17 @@ function howManyMinutesBetween(time1 , time2) {
       !!
     */
   
-    let time1InMin = FullTimeToMin(time1);
-    let time2InMin = FullTimeToMin(time2);
+    let time1InMin = TimeToMinutes(time1);
+    let time2InMin = TimeToMinutes(time2);
 
 
     if (time1InMin > time2InMin) {
-        return MinToFullTime(time1InMin - time2InMin)
+        return MinutesToTime(time1InMin - time2InMin)
     }else{
-        return MinToFullTime(time2InMin-time1InMin);
+        return MinutesToTime(time2InMin - time1InMin);
     }
 
 }
-
-
-
-
 
 
 
@@ -124,4 +120,4 @@ function GetTodayDate() {
 }
 
 
-export default {GetTodayDate,formatTime_12Based,GetTodayDate};
+export default {GetTodayDate,formatTime_12Based,GetTodayDate,howManyMinutesBetween};

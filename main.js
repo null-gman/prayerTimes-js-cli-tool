@@ -19,6 +19,9 @@ async function main() {
     const Times = Res.data.timings;
 
 
+    
+    
+    
     MyPrint.info("Location ",Location);
     MyPrint.info("Hijri Date",Res.data.date.hijri.date);
     MyPrint.info("Hijri Month",Res.data.date.hijri.month.en);
@@ -28,9 +31,13 @@ async function main() {
     console.log("====================================================");
     
     MyPrint.prayTime("Fajr",Times.Fajr);
+    MyPrint.timeBetweenPrayes(Times,"Dhuhr","Fajr");
     MyPrint.prayTime("Dhuhr",Times.Dhuhr);
+    MyPrint.timeBetweenPrayes(Times,"Dhuhr","Asr");
     MyPrint.prayTime("Asr",Times.Asr);
+    MyPrint.timeBetweenPrayes(Times,"Asr","Maghrib");
     MyPrint.prayTime("Maghrib",Times.Maghrib);
+    MyPrint.timeBetweenPrayes(Times,"Maghrib" , "Isha");
     MyPrint.prayTime("Isha",Times.Isha);
 
 }
