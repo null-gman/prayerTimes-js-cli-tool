@@ -142,26 +142,30 @@ function nextPray(prayTimesObj,crunntTime) {
     crunntTime =  formatTime_24based (crunntTime);
     // console.log(TimeToMinutes(crunntTime) );
     // console.log( TimeToMinutes(prayTimesObj.Fajr));
+    crunntTime =  TimeToMinutes(crunntTime)
     
-    
-    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Fajr)) {
-        return "Fajr";
+    let timeRemnd = TimeToMinutes(prayTimesObj.Fajr) - crunntTime;
+    if ( 0 <= timeRemnd) {
+        return "Fajr" + MinutesToTime(timeRemnd);
     }
-    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Dhuhr)) {
-        return "Dhuhr";
+    timeRemnd = TimeToMinutes(prayTimesObj.Dhuhr) - crunntTime;
+    if (0 <= timeRemnd) {
+        return "Dhuhr"  + MinutesToTime(timeRemnd);;
     }
-    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Asr)) {
-        return "Asr";
+    timeRemnd = TimeToMinutes(prayTimesObj.Asr) - crunntTime;
+    if (0 <= timeRemnd) {
+        return "Asr" +  MinutesToTime(timeRemnd);;
     }
-    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Maghrib)) {
-        return "Maghrib";
+    timeRemnd = TimeToMinutes(prayTimesObj.Maghrib) - crunntTime;
+    if (0 <= timeRemnd) {
+        return "Maghrib" + MinutesToTime(timeRemnd);;
     }
-    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Isha)) {
-        return "Isha";
+    timeRemnd = TimeToMinutes(prayTimesObj.Isha) - crunntTime;
+    if (0 <= timeRemnd) {
+        return "Isha" + MinutesToTime(timeRemnd);
     }
 
     return "DONE TODAY!";
-    
 }
 
 export default {GetTodayDate,formatTime_12Based,GetTodayDate,howManyMinutesBetween,nextPray};
