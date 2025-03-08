@@ -138,9 +138,30 @@ function GetTodayDate() {
 
 
 
-
 function nextPray(prayTimesObj,crunntTime) {
+    crunntTime =  formatTime_24based (crunntTime);
+    // console.log(TimeToMinutes(crunntTime) );
+    // console.log( TimeToMinutes(prayTimesObj.Fajr));
     
+    
+    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Fajr)) {
+        return "Fajr";
+    }
+    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Dhuhr)) {
+        return "Dhuhr";
+    }
+    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Asr)) {
+        return "Asr";
+    }
+    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Maghrib)) {
+        return "Maghrib";
+    }
+    if (TimeToMinutes(crunntTime) < TimeToMinutes(prayTimesObj.Isha)) {
+        return "Isha";
+    }
+
+    return "DONE TODAY!";
     
 }
-export default {GetTodayDate,formatTime_12Based,GetTodayDate,howManyMinutesBetween};
+
+export default {GetTodayDate,formatTime_12Based,GetTodayDate,howManyMinutesBetween,nextPray};

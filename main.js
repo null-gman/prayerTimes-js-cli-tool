@@ -45,6 +45,14 @@ async function main() {
     MyPrint.timeBetweenPrayes(Times,"Maghrib" , "Isha");
     MyPrint.prayTime("Isha",Times.Isha);
 
+    console.log("====================================================");
+    console.log("next prayer :");
+    console.log("====================================================");
+
+    const NextPray = TimeUtils.nextPray(Times,TimeNow);
+    console.log(`\t\"${NextPray}\"`);
+    
+
 }
 
 
