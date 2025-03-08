@@ -66,20 +66,17 @@ function formatTime_12Based(time = "") {
     let hoursSec = time.split(":")[0];
     let minutesSec = time.split(":")[1];
     
+    
     if (+hoursSec > 12) {
         hoursSec = +hoursSec - 12;
     }
 
-    if(hoursSec === "00"){
+    if(hoursSec === "00" || hoursSec === "0"){
         hoursSec = "12";   
     }
     
-
-    if (+minutesSec < 10) {
-        minutesSec = "0" + minutesSec;
-    }
     //just to be more clear :) , i know about string concatenating
-    return String(hoursSec) + ":" + minutesSec;
+    return formatDD_MM_TT(hoursSec) + ":" + formatDD_MM_TT(minutesSec);
 }
 
 
