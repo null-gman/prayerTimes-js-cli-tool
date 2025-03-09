@@ -7,13 +7,13 @@ const ResetCode = "\x1b[0m";   // Reset to default
 const RedCode = "\x1b[31m";    
 const GreenCode = "\x1b[32m";  
 const BlueCode = "\x1b[34m";   
-const GrayCode = "\x1b[90m";   
+// const GrayCode = "\x1b[90m";   
 
 // Background Colors
-const BgRed = "\x1b[41m";      
+// const BgRed = "\x1b[41m";      
 const BgGreen = "\x1b[42m";    
 const BgBlue = "\x1b[44m";     
-const BgGray = "\x1b[100m";    
+// const BgGray = "\x1b[100m";    
 
 
 
@@ -32,13 +32,14 @@ MyPrint.timeBetweenPrayes = (prayesTimesObj , prayKey1,prayKey2) => {
 
 MyPrint.prayTime = ( prayName,time ) => {
     //time here mean 12 base 12:88 AM or PM
-    time = String(time);
-    prayName = String(prayName);
 
     
     if (!time || !prayName) {
         throw new Error("can't be undefined");
     }
+
+    time = String(time);
+    prayName = String(prayName);
 
     time = timeUtils.formatTime_12Based(time);
 
@@ -47,12 +48,13 @@ MyPrint.prayTime = ( prayName,time ) => {
 
 
 MyPrint.info = ( infoType,infoValue ) => {
-    infoType = String(infoType);
-    infoValue = String(infoValue);
+
     
     if (!infoType || !infoValue) {
         throw new Error("can't be undefined");
     }
+    infoType = String(infoType);
+    infoValue = String(infoValue);
 
     console.log("> "+BlueCode+infoType+" : "+GreenCode+infoValue+ResetCode);
 }
