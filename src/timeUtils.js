@@ -58,10 +58,10 @@ function MinutesToTime(minutes) {
  */
 function formatTime_12Based(time = "") {
     
-    time = String(time);
     if (!time) {
         throw new Error("can't be undefined");
     }
+    time = String(time);
     
     let hoursSec = time.split(":")[0];
     let minutesSec = time.split(":")[1];
@@ -81,10 +81,10 @@ function formatTime_12Based(time = "") {
 
 function formatTime_24based(time = "") {
     
-    time = String(time);
     if (!time) {
         throw new Error("can't be undefined");
     }
+    time = String(time);
     
     let hoursSec = time.split(":")[0];
     let minutesSec = time.split(":")[1];
