@@ -140,9 +140,6 @@ function GetTodayDate() {
 
 function nextPray(prayTimesObj,crunntTime) {
 
-
-
-
     crunntTime =  TimeToMinutes(crunntTime);
 
     let timeRemnd = 0;
@@ -167,7 +164,7 @@ function nextPray(prayTimesObj,crunntTime) {
     if (retunedValue = isThatNext("Maghrib")) {
         return retunedValue;
     }
-    if (retunedValue = isThatNext("MaghIsharib")) {
+    if (retunedValue = isThatNext("Isha")) {
         return retunedValue;
     }
 
