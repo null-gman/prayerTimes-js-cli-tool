@@ -54,3 +54,5 @@ pray
 ```
 > be sure to add the file into `PATH` variable to execute it from any directory .
 3. ![image](https://github.com/user-attachments/assets/63f264f2-adfe-4ffc-a4e8-a59aaea17b28)
+
+> **NOTE:** If you disconnected from the internet or the server goes down, an error message will occur.
