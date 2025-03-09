@@ -139,30 +139,36 @@ function GetTodayDate() {
 
 
 function nextPray(prayTimesObj,crunntTime) {
-    crunntTime =  formatTime_24based (crunntTime);
-    // console.log(TimeToMinutes(crunntTime) );
-    // console.log( TimeToMinutes(prayTimesObj.Fajr));
-    crunntTime =  TimeToMinutes(crunntTime)
-    
-    let timeRemnd = TimeToMinutes(prayTimesObj.Fajr) - crunntTime;
-    if ( 0 <= timeRemnd) {
-        return "Fajr" + MinutesToTime(timeRemnd);
+
+
+
+
+    crunntTime =  TimeToMinutes(crunntTime);
+
+    let timeRemnd = 0;
+    let retunedValue;
+
+    const isThatNext = (prayName) => {
+        timeRemnd = TimeToMinutes(prayTimesObj[prayName]) - crunntTime;
+        if ( 0 <= timeRemnd) {
+            return `now -------${MinutesToTime(timeRemnd)}------> ${prayName}`;
+        }
     }
-    timeRemnd = TimeToMinutes(prayTimesObj.Dhuhr) - crunntTime;
-    if (0 <= timeRemnd) {
-        return "Dhuhr"  + MinutesToTime(timeRemnd);;
+
+    if (retunedValue = isThatNext("Fajr")) {
+        return retunedValue;
     }
-    timeRemnd = TimeToMinutes(prayTimesObj.Asr) - crunntTime;
-    if (0 <= timeRemnd) {
-        return "Asr" +  MinutesToTime(timeRemnd);;
+    if (retunedValue = isThatNext("Dhuhr")) {
+        return retunedValue;
     }
-    timeRemnd = TimeToMinutes(prayTimesObj.Maghrib) - crunntTime;
-    if (0 <= timeRemnd) {
-        return "Maghrib" + MinutesToTime(timeRemnd);;
+    if (retunedValue = isThatNext("Asr")) {
+        return retunedValue;
     }
-    timeRemnd = TimeToMinutes(prayTimesObj.Isha) - crunntTime;
-    if (0 <= timeRemnd) {
-        return "Isha" + MinutesToTime(timeRemnd);
+    if (retunedValue = isThatNext("Maghrib")) {
+        return retunedValue;
+    }
+    if (retunedValue = isThatNext("MaghIsharib")) {
+        return retunedValue;
     }
 
     return "DONE TODAY!";

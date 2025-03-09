@@ -15,8 +15,8 @@ const Location = "Alexandria";
 async function main() {
     const DateNow = new Date();
     const TodayDate = TimeUtils.GetTodayDate() ;
-    let TimeNow = DateNow.getHours() + ":" + DateNow.getMinutes()  ; /*TODO*/ 
-    TimeNow = TimeUtils.formatTime_12Based(TimeNow);
+    const TimeNow = DateNow.getHours() + ":" + DateNow.getMinutes()  ; /*TODO*/ 
+    const TimeNow12 = TimeUtils.formatTime_12Based(TimeNow);
     const Res = await GetReqRestApi.getJson(TodayDate,Location);
     const Times = Res.data.timings;
 
@@ -26,7 +26,7 @@ async function main() {
     
     
      
-    MyPrint.info("TimeNow ",TimeNow);
+    MyPrint.info("TimeNow ",TimeNow12);
     MyPrint.info("Location ",Location);
     MyPrint.info("Hijri Date",Res.data.date.hijri.date);
     MyPrint.info("Hijri Month",Res.data.date.hijri.month.en);
@@ -49,8 +49,9 @@ async function main() {
     console.log("next prayer :");
     console.log("====================================================");
 
+    
     const NextPray = TimeUtils.nextPray(Times,TimeNow);
-    console.log(`\t\"${NextPray}\"`);
+    console.log(NextPray);
     
 
 }
