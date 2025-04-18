@@ -16,19 +16,17 @@ function getFlages() {
     if ( ARGV[index][0] !== '-') {
       continue;
     }
-    if (! ARGV[index + 1]) {
-      continue;
-    }
-    if (ARGV[index + 1][0] === '-') {
+    if( ARGV[index+1] && ARGV[index + 1][0] === '-') {
       continue;
     }
 
     flageKey = String(ARGV[index]).slice(1); /*remove "-" from the flage key */
     flageKey = flageKey.toLocaleLowerCase(); /*no case sensitivity flages */
 
-    flageValue = ARGV[index + 1];
+    flageValue = ARGV[index + 1] ?? null;
 
     FlagesObj[flageKey] = flageValue;
+    
   }
 
   return FlagesObj;
