@@ -8,6 +8,19 @@ A simple CLI tool that provides  prayer times for  specified location .
   
 # Usage
 
+## Daily Prayer Times Caching
+
+The program caches the prayer times for each day in a file named `prayTimes.json`.
+
+- **By default**, it looks for `prayTimes.json` in the **current working directory**.
+- To use a custom path, pass the `-pytm <file path>` flag (short for **pray time**).
+
+The program fetches the prayer times from an API **once per day** and stores the response in the specified file.
+
+If the file is not found or the data is corrupted, a new API request will be made to retrieve fresh prayer times.
+
+Caching the data helps reduce unnecessary API calls, which improves the overall performance and efficiency of the application.
+## run the program
 1. To run the program, install Node.js.
 2. Then run: `npm start`.
 3. Alternatively, from the root directory, run: `node main.js`.
