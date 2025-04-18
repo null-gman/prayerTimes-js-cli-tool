@@ -2,7 +2,7 @@ import GetReqRestApi from "./src/GetReqRestApi.js";
 import MyPrint from "./src/logColor.js";
 import TimeUtils from "./src/timeUtils.js";
 
-MyPrint
+
 
 
 /* add your Location in this varable as string , 
@@ -17,6 +17,7 @@ async function main() {
     const TodayDate = TimeUtils.GetTodayDate() ;
     const TimeNow = DateNow.getHours() + ":" + DateNow.getMinutes()  ; /*TODO*/ 
     const TimeNow12 = TimeUtils.formatTime_12Based(TimeNow);
+
     const Res = await GetReqRestApi.getJson(TodayDate,Location);
     const Times = Res.data.timings;
 
