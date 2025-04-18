@@ -20,6 +20,8 @@ The program fetches the prayer times from an API **once per day** and stores the
 If the file is not found or the data is corrupted, a new API request will be made to retrieve fresh prayer times.
 
 Caching the data helps reduce unnecessary API calls, which improves the overall performance and efficiency of the application.
+
+> to disable the cach add `-nocach` flag .
 ## run the program
 1. To run the program, install Node.js.
 2. Then run: `npm start`.
